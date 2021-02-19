@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Planning Poker</title>
+    <title>♣️ Planning Poker ♦️</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
@@ -22,16 +22,29 @@
       </p>
     <![endif]-->
     <header>
-        <p class="between" id="room-name">(Start voting to enter a room)</p>
+        <p class="room-identification" id="room-name">
+            (Start voting to enter a room)
+        </p>
         <h1>Planning Poker!</h1>
         <p class="greeting" id="room-greeting">
             Are you ready to cast your vote?
         </p>
     </header>
-    <img id="page-image" src="/../8bit.png" />
+    <img id="pageImage" src="/../8bit.png" />
+    <form>
+        <p id="selections" visibility="hidden">
+            <button class="btn" id="1">1</button>
+            <button class="btn" id="3">3</button>
+            <button class="btn" id="5">5</button>
+            <button class="btn" id="8">8</button>
+            <button class="btn" id="13">13</button>
+        </p>
+        <p>
+            <u>Guidelines:</u><br /> - You get one vote per story.<br /> - The higher the number, the more complex the task. <br /> - Discuss discrepencies!
+        </p>
+    </form>
 
     <main>
-        <input type="button" />
         <button class="btn" id="start">Start Voting!</button>
     </main>
 
