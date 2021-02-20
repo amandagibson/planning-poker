@@ -27,3 +27,7 @@ document.querySelectorAll(".vote-btn").forEach(item => {
         socket.emit("vote", { value: `${item.textContent}`, roomId: roomId });
     });
 });
+
+socket.on('currentVotes', (currentVotes) => {
+    console.log(currentVotes)
+})

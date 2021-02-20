@@ -7,6 +7,8 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const publicPath = path.join(__dirname, "/../public");
 const port = process.env.PORT || 3000;
+app.use(express.static(publicPath));
+
 
 let history = new Map(
     // roomId => [
@@ -21,14 +23,24 @@ let history = new Map(
     // ]
 );
 
-let amountOfVotesPerChoice = [];
-
-
-app.use(express.static(publicPath));
-
 server.listen(port, () => {
     console.log(`Server is up on port ${port}.`);
 });
+
+function getRoomVotes(roomId) {
+    return Array.from(history.get(roomId).values());
+}
+
+function setVote(roomId, clientId, value) {
+    const roomHistory = history.get(roomId);
+    roomHistory.set(clientId, value);
+}
+
+function createRoomHistory(roomId) {
+    if (!history.has(roomId)) {
+        history.set(roomId, new Map())
+    }
+}
 
 
 io.on("connection", (socket) => {
@@ -36,26 +48,14 @@ io.on("connection", (socket) => {
 
     socket.on("start", ({ roomId }) => {
         socket.join(roomId)
-            //if there is no history for the room, we want to create a new map.
-        if (!history.has(roomId)) {
-            history.set(roomId, new Map())
-        }
-        // //fetch history
-        socket.emit("previousVotes", amountOfVotesPerChoice);
+        createRoomHistory(roomId);
+        //fetch history upon entering room
+        socket.emit("currentVotes", getRoomVotes(roomId));
     })
 
     socket.on("vote", (vote) => {
-        //add votes to room history, overwrite the vote if the clientid already exists with a vote in the room.
-        socket.to(vote.roomId).emit("vote-update", vote.value);
-        let roomHistory = history.get(vote.roomId);
-        roomHistory.set(socket.client.id, vote.value);
+        setVote(vote.roomId, socket.client.id, vote.value);
         console.log(history)
-            //create an array of values that can be sent back to the client
-        amountOfVotesPerChoice = Array.from(roomHistory.values());
-        console.log(amountOfVotesPerChoice);
+        io.in(vote.roomId).emit("currentVotes", getRoomVotes(vote.roomId));
     })
 });
-
-// show votes on front end
-
-// add a way to clear the history when no client id can be found. (vote again button?)
