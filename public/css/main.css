@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -11,10 +11,9 @@ html {
 }
 
 body {
-    font-family: "Press Start 2P", sans-serif;
+    font-family: 'Press Start 2P', sans-serif;
     color: #eee;
     background-color: #222;
-    /* background-color: #60b347; */
 }
 
 
@@ -40,7 +39,7 @@ div {
 }
 
 
-/* ELEMENTS STYLE */
+/* title */
 
 h1 {
     font-size: 4rem;
@@ -52,7 +51,19 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+
+/* guidelines  */
+
 div p {
+    font-size: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7em;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.vote-wrapper {
     font-size: 1.5rem;
     margin-left: auto;
     margin-right: auto;
@@ -63,7 +74,7 @@ div p {
 
 .page-image {
     padding: 70px 0;
-    width: 40%;
+    width: 25%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -90,17 +101,44 @@ div p {
     font-family: inherit;
     padding: 2rem 3rem;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
+}
+
+.btn-border {
+    background: none;
+    padding: 1rem 2rem;
+    color: #eee;
+    border: 2px solid #eee;
+}
+
+.vote-result,
+.vote-btn {
+    position: relative;
+    font-size: 2rem;
+    font-family: inherit;
+    padding: 2rem 3rem;
+    display: inline-block;
+    width: 100px;
+}
+
+.vote-result {
+    color: rgb(123, 255, 134);
 }
 
 .btn:hover {
     background-color: #ccc;
 }
 
-.room-identification {
+.header-right {
     font-size: 1.4rem;
     position: absolute;
     top: 2rem;
     right: 2rem;
+}
+
+.header-left {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
 }

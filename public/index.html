@@ -22,24 +22,31 @@
       </p>
     <![endif]-->
     <header>
-        <p class="room-identification" id="room-name">
-            (Start voting to enter a room)
-        </p>
+        <button class="header-left btn btn-border" id="reset-button">
+        Reset votes
+      </button>
+        <p class="header-right" id="room-name">(Start voting to enter a room)</p>
         <h1>Planning Poker!</h1>
         <p class="greeting" id="room-greeting">
             Are you ready to cast your vote?
         </p>
     </header>
     <img class="page-image" src="/../8bit.png" />
-    <div>
-        <div id="output"></div>
-        <p id="selections" visibility="hidden">
+    <div id="vote-results-container">
+        <div id="output" class="vote-wrapper">
+            <div class="vote-result" id="vote-result-1"></div>
+            <div class="vote-result" id="vote-result-3"></div>
+            <div class="vote-result" id="vote-result-5"></div>
+            <div class="vote-result" id="vote-result-8"></div>
+            <div class="vote-result" id="vote-result-13"></div>
+        </div>
+        <div class="vote-wrapper">
             <button class="vote-btn btn">1</button>
             <button class="vote-btn btn">3</button>
             <button class="vote-btn btn">5</button>
             <button class="vote-btn btn">8</button>
             <button class="vote-btn btn">13</button>
-        </p>
+        </div>
         <p>
             <u>Guidelines:</u><br /> - You get one vote per story.<br /> - The higher the number, the more complex the task. <br /> - Discuss any discrepencies!
         </p>
