@@ -13,11 +13,17 @@ document.getElementById("start").addEventListener("click", () => {
     }
     socket.emit("start", { roomId: roomId });
     changeRoomSetup();
-})
+});
 
 function changeRoomSetup() {
     start.style.display = "none";
     document.getElementById("room-name").textContent = `(Room: ${roomId})`;
     document.getElementById("room-greeting").textContent = `Time to vote!`;
     selections.style.display = "block";
-}
+};
+
+document.querySelectorAll(".vote-btn").forEach(item => {
+    item.addEventListener("click", () => {
+        socket.emit("vote", { value: `${item.textContent}`, roomId: roomId });
+    });
+});

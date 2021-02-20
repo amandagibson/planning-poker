@@ -30,22 +30,23 @@
             Are you ready to cast your vote?
         </p>
     </header>
-    <img id="pageImage" src="/../8bit.png" />
-    <form>
+    <img class="page-image" src="/../8bit.png" />
+    <div>
+        <div id="output"></div>
         <p id="selections" visibility="hidden">
-            <button class="btn" id="1">1</button>
-            <button class="btn" id="3">3</button>
-            <button class="btn" id="5">5</button>
-            <button class="btn" id="8">8</button>
-            <button class="btn" id="13">13</button>
+            <button class="vote-btn btn">1</button>
+            <button class="vote-btn btn">3</button>
+            <button class="vote-btn btn">5</button>
+            <button class="vote-btn btn">8</button>
+            <button class="vote-btn btn">13</button>
         </p>
         <p>
-            <u>Guidelines:</u><br /> - You get one vote per story.<br /> - The higher the number, the more complex the task. <br /> - Discuss discrepencies!
+            <u>Guidelines:</u><br /> - You get one vote per story.<br /> - The higher the number, the more complex the task. <br /> - Discuss any discrepencies!
         </p>
-    </form>
+    </div>
 
     <main>
-        <button class="btn" id="start">Start Voting!</button>
+        <button class="start-btn btn" id="start">Start Voting!</button>
     </main>
 
     <script src="/socket.io/socket.io.js"></script>
