@@ -14,16 +14,20 @@ Under the repository name, click Clone or download. Copy the clone URL for the r
 
 # Installation:
 
-run `npm install` in the terminal
+run `npm install` in the terminal to install dependencies.
 
 # Available Scripts:
 
 In the project directory, you can run:
 
-### `npm start`
+`npm start`
 
-Allows the application to run locally. <br>
+This allows the application to run locally. <br>
 Navigate to [http://localhost:3000](http://localhost:3000) in the browser to view.
+
+`npm test`
+
+Will run tests (server logs are visible when running tests)
 
 ---
 
