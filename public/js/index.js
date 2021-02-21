@@ -32,7 +32,7 @@ function showVotingUI() {
 
 document.querySelectorAll('.vote-btn').forEach(item => {
     item.addEventListener('click', () => {
-        socket.emit('vote', { value: `${item.textContent}`, roomId: roomId });
+        socket.emit('vote', { value: item.textContent, roomId: roomId });
     });
 });
 

@@ -82,3 +82,5 @@ io.on('connection', socket => {
         });
     });
 });
+
+exports.server = io;
