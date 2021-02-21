@@ -1,6 +1,6 @@
 # Planning Poker
 
-This is a web application that developers can use when estimating the complexity of stories.
+This is a single-page web application that developers can use when estimating the complexity of stories.
 
 Built by: [Amanda Gibson](https://github.com/amandagibson)
 
@@ -33,4 +33,8 @@ Will run tests (server logs are visible when running tests)
 
 # Built with:
 
-[node.js](https://nodejs.org/en/), [socket.io](https://socket.io/) and [express](https://expressjs.com/)
+[node.js](https://nodejs.org/en/), [socket.io](https://socket.io/) & [express](https://expressjs.com/)
+
+# Tested with:
+
+[mocha](https://mochajs.org/) & [chai](https://www.chaijs.com/)
