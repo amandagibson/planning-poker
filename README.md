@@ -12,7 +12,7 @@ When all members leave the room, the room history is cleared.
 
 Built by: [Amanda Gibson](https://github.com/amandagibson)
 
-Deployed with Heroku at https://amandas-planning-poker.herokuapp.com/
+Deployed with Render at https://planning-poker2k26.onrender.com/
 
 # Getting Started:
 
